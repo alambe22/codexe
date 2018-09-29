@@ -1,0 +1,5 @@
+python3 student_examples/1.py:$:Hello world!
+python3 student_examples/2.py:$:Hello world!
+python3 student_examples/3.py:$:Hello world!
+python3 student_examples/4.py:$:Hello world!
+sh student_examples/5.sh:$:Hello world!

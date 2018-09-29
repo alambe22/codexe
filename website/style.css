@@ -20,6 +20,8 @@ header{
 	float: left;
 }
 
+
+
 aside{
 	float: left;
 	height: 95%;
@@ -27,6 +29,12 @@ aside{
 	border-left-style: solid;
 	border-right-style: solid;
 	width: 25%;
+}
+input[type=file], input[type=submit]{
+	border: 2px solid #800000;
+	color: #000000;
+	background-color: #800000;
+	
 }
 section{
 	height: 95%;
