@@ -69,14 +69,14 @@ aside{
 	padding-top: 0em;
 	margin-top: 0em;
 	width: 100%;
-	font-size: 10pt;
+	font-size: 12pt;
 	background-color:	 #00cc66;
 	transition: font-size .5s, background-color .5s, border-bottom-color .5s;
 	
 }
 
 #addAsgn:hover{
-	font-size: 12pt;
+	font-size: 14pt;
 	background-color: #e6fff2;
 	border-bottom-color: #00cc66;
 }
