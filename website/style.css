@@ -1,5 +1,35 @@
+*{
+	box-sizing: border-box;
+}
+html{
+	height: 99%;
+	width:99%;
+}
+body{
+	height: 99%;
+	width: 99%;
+
+}
 header{
 	width: 100%;
-	min-height: 10%;
+	height: 5%;
 	border-style: solid;
+	margin: 0;
+	float: left;
+}
+
+aside{
+	float: left;
+	height: 95%;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
+	width: 25%;
+}
+section{
+	height: 95%;
+	border-bottom-style: solid;
+	border-right-style: solid;
+	width:75%;
+	float: left;
 }
