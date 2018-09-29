@@ -2,7 +2,7 @@
 <?php
 	//$allowed contains all allowed file types.
 	$allowed = array('py');
-	$target_dir = "uploads/";
+	$target_dir = "/var/www/html/upload";
 	$target_file = $target_dir . basename($FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
 	$extenType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
