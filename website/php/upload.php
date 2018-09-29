@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php
 	//$allowed contains all allowed file types.
 	$allowed = array('py');
@@ -17,3 +19,5 @@
 	}
 }
 ?>
+</body>
+</html>
