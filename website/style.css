@@ -1,4 +1,5 @@
 *{
+	font-family: 'Barlow', sans-serif;
 	box-sizing: border-box;
 	border-color: #800000;
 }
@@ -20,6 +21,15 @@ header{
 	float: left;
 }
 
+.student{
+	width: 100%;
+	border-bottom: ridge;
+	border-bottom-color: #800000;
+	background-color: #cccccc;
+}
+.stdId{
+	margin-left: .4em;
+}
 .assignmentTitle{
 	width: 100%;
 	border-bottom: ridge;

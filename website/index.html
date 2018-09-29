@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="jss/jquery-3.3.1.min.js"></script>
 <script src="jss/main.js"></script>
 </head>
 
 <body>
+<div id="professor">
 	<header>
 		<select id="assignments">
 			<option value="add" onclick="addAssignment()">Add Assignment</option>
 		</select>
+		
 	</header>
 	<aside id="assignment">
 		<form action="php/upload.php" method="post" enctype="multipart/form-data" id="asgn1" class="assignment">
@@ -21,7 +24,7 @@
 		<button id="addAsgn">Add Assignment</button>
 	</aside>
 	<section id="overview">
-		<div id="student1"><span id="alambe22">alambe22 </span>
+		<div  class="student" id="student1"><span class="stdId" id="alambe22">alambe22 </span><span> chck </span><span id="grade"> 54% </span><span> rf </span><span id="rflags"> 5 </span><span> yf </span><span id="yflags"> 54 </span></div>
 		<form action="php/runPython.php">
 			<input type="submit" value="Run Tests" name="submit">
 		</form>
