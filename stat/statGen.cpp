@@ -9,15 +9,12 @@ int main(){
     std::string line;
     while(std::cin >> line)
     {
-        //std::cout << line << std::endl;
-        //std::cout << line.substr(line.find_last_of(".")+1) << std::endl;
         if(line.substr(line.find_last_of(".")+1) == "py")
         {
             std::cout << line << ": " << count_lines(line) << std::endl;
         }
     }
 }
-
 
 int count_lines(std::string file_name)
 {
