@@ -13,10 +13,13 @@
 		</select>
 	</header>
 	<aside id="assignment">
-		<button>Test Assignment</button>
+		<form action="php/uploads.php" method="post" enctype="multipary/form-data">
+			Test Assignment:
+			<input type="file" name="fileToUpload" id="fileToUpload">
+			<input type="submit" value="Upload file" name="submit">
 	</aside>
 	<section id="overview">
-	
+		
 	</section>
 </body>
 </html>
