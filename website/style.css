@@ -1,5 +1,7 @@
 *{
 	box-sizing: border-box;
+	border-color: #800000;
+	color: 	 #cccccc;
 }
 html{
 	height: 99%;
@@ -8,7 +10,7 @@ html{
 body{
 	height: 99%;
 	width: 99%;
-
+	background-color: #999999;
 }
 header{
 	width: 100%;
