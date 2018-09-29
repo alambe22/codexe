@@ -1,7 +1,11 @@
 *{
 	font-family: 'Barlow', sans-serif;
 	box-sizing: border-box;
-	border-color: #800000;
+	border-color: #00e68a;
+}
+form{
+	padding-bottom: 0px;
+	margin-bottom: 0px;
 }
 html{
 	height: 99.5%;
@@ -11,40 +15,39 @@ html{
 body{
 	height: 99.4%;
 	width: 99.4%;
-	background-color: #999999;
+	background-color:  #ccffe6;
 }
 header{
 	width: 100%;
 	height: 5%;
 	border-style: solid;
-	margin: 0;
 	float: left;
 }
 
 .student{
 	width: 100%;
-	border-bottom: ridge;
-	border-bottom-color: #800000;
-	background-color: #cccccc;
+	border-bottom-style: solid;
+	border-bottom-color: #00e68a;
+	background-color: #e6fff2;
 }
 .stdId{
 	margin-left: .4em;
 }
 .assignmentTitle{
 	width: 100%;
-	border-bottom: ridge;
-	border-bottom-color: #cc0000;
-	background: #cccccc;
+	border-bottom: solid;
+	border-bottom-color: #00e68a;
+	background: #e6fff2;
 	color: #000;
 	display: inline-block;
 }
 
 .assignment{
-	border-bottom: solid;
+	border-bottom-style: solid;
 	width: 100%;
 	display: inline-block;
-	border-bottom-color: #800000;
-	background-color:#cccccc;
+	border-bottom-color: #00e68a;
+	background-color: #e6fff2;
 	color: #000;
 }
 
@@ -55,7 +58,7 @@ aside{
 	border-left-style: solid;
 	border-right-style: solid;
 	width: 25%;
-	background-color: #1a1a1a;
+	background-color: #ccffe6;
 }
 
 #addAsgn{
@@ -63,31 +66,34 @@ aside{
 	border-left-style: none;
 	border-right-style: none;
 	border-top-style: none;
+	padding-top: 0em;
+	margin-top: 0em;
 	width: 100%;
-	font-size: 10pt;
-	background-color:	 #737373;
+	font-size: 12pt;
+	background-color:	 #00e68a;
 	transition: font-size .5s, background-color .5s, border-bottom-color .5s;
+	
 }
 
 #addAsgn:hover{
 	font-size: 14pt;
-	background-color: #cccccc;
-	border-bottom-color: #000;
+	background-color: #e6fff2;
+	border-bottom-color:#00e68a;
 }
 
 
 input[type=submit]{
 	float: right;
-	border: 2px solid #800000;
-	background-color: #800000;
+	border: 2px solid #00e68a;
+	background-color: #00e68a;
 	text-decoration: none;
-	color:#cccccc;
+	color:#000;
 	transition: background-color .5s, color .5s, border .5s;
 }
 input[type=submit]:hover{
-	background-color: #4dff4d;
+	background-color: #00cc66;
 	color: #000;
-	border: 2px ridge #000000;
+	border: 2px solid #000000;
 }
 
 section{
