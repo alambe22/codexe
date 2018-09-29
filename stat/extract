@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]
+then
+    echo "usage: ./extract docker-image path-to-extract"
+else
+    id=$(docker create $1)
+    docker cp $id:$2 .
+    docker rm -v $id
+fi
