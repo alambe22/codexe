@@ -1,15 +1,15 @@
 *{
 	box-sizing: border-box;
 	border-color: #800000;
-	color: 	 #cccccc;
 }
 html{
-	height: 99%;
-	width:99%;
+	height: 99.5%;
+	width:99.5%;
+	overflow: hidden;
 }
 body{
-	height: 99%;
-	width: 99%;
+	height: 99.4%;
+	width: 99.4%;
 	background-color: #999999;
 }
 header{
@@ -20,7 +20,23 @@ header{
 	float: left;
 }
 
+.assignmentTitle{
+	width: 100%;
+	border-bottom: ridge;
+	border-bottom-color: #cc0000;
+	background: #cccccc;
+	color: #000;
+	display: inline-block;
+}
 
+.assignment{
+	border-bottom: solid;
+	width: 100%;
+	display: inline-block;
+	border-bottom-color: #800000;
+	background-color:#cccccc;
+	color: #000;
+}
 
 aside{
 	float: left;
@@ -29,14 +45,41 @@ aside{
 	border-left-style: solid;
 	border-right-style: solid;
 	width: 25%;
+	background-color: #1a1a1a;
 }
 
-input[type=file], input[type=submit]{
+#addAsgn{
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	width: 100%;
+	font-size: 10pt;
+	background-color:	 #737373;
+	transition: font-size .5s, background-color .5s, border-bottom-color .5s;
+}
+
+#addAsgn:hover{
+	font-size: 14pt;
+	background-color: #cccccc;
+	border-bottom-color: #000;
+}
+
+
+input[type=submit]{
+	float: right;
 	border: 2px solid #800000;
-	color: #000000;
 	background-color: #800000;
 	text-decoration: none;
+	color:#cccccc;
+	transition: background-color .5s, color .5s, border .5s;
 }
+input[type=submit]:hover{
+	background-color: #4dff4d;
+	color: #000;
+	border: 2px ridge #000000;
+}
+
 section{
 	height: 95%;
 	border-bottom-style: solid;

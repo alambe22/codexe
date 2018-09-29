@@ -13,13 +13,18 @@
 		</select>
 	</header>
 	<aside id="assignment">
-		<form action="php/upload.php" method="post" enctype="multipart/form-data">
-			Test Assignment:
+		<form action="php/upload.php" method="post" enctype="multipart/form-data" id="asgn1" class="assignment">
+			<span class="assignmentTitle">Test Assignment:</span>
 			<input type="file" name="fileToUpload" id="fileToUpload">
-			<input type="submit" value="Upload file" name="submit">
+			<input type="submit" value="Upload Gradescript" name="submit">
+		</form>
+		<button id="addAsgn">Add Assignment</button>
 	</aside>
 	<section id="overview">
-		
+		<div id="student1"><span id="alambe22">alambe22 </span>
+		<form action="php/runPython.php">
+			<input type="submit" value="Run Tests" name="submit">
+		</form>
 	</section>
 	
 </body>
