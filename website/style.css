@@ -1,7 +1,7 @@
 *{
 	font-family: 'Barlow', sans-serif;
 	box-sizing: border-box;
-	border-color: #00cc66;
+	border-color: #00e68a;
 }
 form{
 	padding-bottom: 0px;
@@ -20,14 +20,14 @@ body{
 header{
 	width: 100%;
 	height: 5%;
-	border-style: ridge;
+	border-style: solid;
 	float: left;
 }
 
 .student{
 	width: 100%;
-	border-bottom-style: ridge;
-	border-bottom-color: #00cc66;
+	border-bottom-style: solid;
+	border-bottom-color: #00e68a;
 	background-color: #e6fff2;
 }
 .stdId{
@@ -35,18 +35,18 @@ header{
 }
 .assignmentTitle{
 	width: 100%;
-	border-bottom: ridge;
-	border-bottom-color: #00cc66;
+	border-bottom: solid;
+	border-bottom-color: #00e68a;
 	background: #e6fff2;
 	color: #000;
 	display: inline-block;
 }
 
 .assignment{
-	border-bottom-style: ridge;
+	border-bottom-style: solid;
 	width: 100%;
 	display: inline-block;
-	border-bottom-color: #00cc66;
+	border-bottom-color: #00e68a;
 	background-color: #e6fff2;
 	color: #000;
 }
@@ -54,15 +54,15 @@ header{
 aside{
 	float: left;
 	height: 95%;
-	border-bottom-style: ridge;
-	border-left-style: ridge;
-	border-right-style: ridge;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
 	width: 25%;
 	background-color: #ccffe6;
 }
 
 #addAsgn{
-	border-bottom-style: ridge;
+	border-bottom-style: solid;
 	border-left-style: none;
 	border-right-style: none;
 	border-top-style: none;
@@ -70,7 +70,7 @@ aside{
 	margin-top: 0em;
 	width: 100%;
 	font-size: 12pt;
-	background-color:	 #00cc66;
+	background-color:	 #00e68a;
 	transition: font-size .5s, background-color .5s, border-bottom-color .5s;
 	
 }
@@ -78,14 +78,14 @@ aside{
 #addAsgn:hover{
 	font-size: 14pt;
 	background-color: #e6fff2;
-	border-bottom-color: #00cc66;
+	border-bottom-color:#00e68a;
 }
 
 
 input[type=submit]{
 	float: right;
-	border: 2px solid #00cc66;
-	background-color: #00cc66;
+	border: 2px solid #00e68a;
+	background-color: #00e68a;
 	text-decoration: none;
 	color:#000;
 	transition: background-color .5s, color .5s, border .5s;
@@ -93,7 +93,7 @@ input[type=submit]{
 input[type=submit]:hover{
 	background-color: #00cc66;
 	color: #000;
-	border: 2px ridge #000000;
+	border: 2px solid #000000;
 }
 
 section{
