@@ -79,7 +79,7 @@ d = runCommands(getCommands())
 for i in d.keys():
     print(i)
     print("Output: " + str(d[i]))
-print(d.dumps())
+print(dumps(d))
 
 
 
