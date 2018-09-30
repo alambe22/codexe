@@ -81,6 +81,7 @@ for s in rc.keys():
     total = len(rc[s])
     correct = 0
     students[s] = {}
+    students[s]["tests"] = {}
     for i in rc[s].keys():
         if not i == "report":
             correct += rc[s][i]["result"]
