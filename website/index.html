@@ -29,14 +29,14 @@ $(document).ready(function(){
 	$.ajax({
 		url: 'php/upload.php',
 		type: 'GET',
-		data: {action: 'readDirectory', dir:'/www/var/classes'},
+		data: {action: 'readDirectory', dirs:'/www/var/classes'},
 		success: function(data){
-			var i = 0;
-			for(i=0; i< data.length; i++){
+			var folders = JSON.parse(data);
+			for (i in folders){
 				$.ajax({
 					url: 'php/upload.php',
 					type: 'GET',
-					data: {action: 'readDirectory', dir:'/www/var/classes' +data[i]},
+					data: {action: 'readDirectory', dirs:'/www/var/classes/' +data[i]},
 					success: function(data2){
 						var j=0;
 						for(j=0; j<data.length; j++){

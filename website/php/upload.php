@@ -20,10 +20,10 @@
 		$target_dir = "/var/www/classes/" . $class . "/" . $assignment;
 		mkdir($target_dir);
 	}
-	function readFolders(){
-		$show_json = json_encode(scandir("/var/www/classes"));
+	function readFolders($target_dir){
+		$show_json = json_encode(scandir($target_dir));
 		if($show_json != false){
-			echo (scandir("/var/www/classes");
+			echo json_encode(scandir($target_dir));
 		}else{
 			die("json_encode fail: " . json_last_error_msg());
 		}
@@ -38,6 +38,6 @@
 		}
 	}
 	if(isset($_GET['action']) && !empty($_GET['action'])){
-		readFolders();
+		readFolders($_GET['dirs']);
 	}
 ?>
