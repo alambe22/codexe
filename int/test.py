@@ -82,6 +82,7 @@ rc = runCommands(getCommands())
 for s in rc.keys():
     total = len(rc[s])
     correct = 0
+    students[s] = {}
     for i in rc[s].keys():
         if not i == "report":
             correct += rc[s][i]["result"]
