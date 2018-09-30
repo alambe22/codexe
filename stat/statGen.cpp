@@ -6,6 +6,7 @@
 #include <string>
 
 int count_lines(std::string);
+int count_comments(std::string, std::string);
 std::string get_libraries(std::string, std::string);
 
 int main(){
@@ -16,17 +17,19 @@ int main(){
         line_num = count_lines(line);
         if(line.substr(line.find_last_of(".")+1) == "py")
         {
-            std::cout << line << " " << line_num << " \"" << get_libraries(line, "py")
+            std::cout << line << " " << line_num << " " << count_comments(line, "py")
+                << " \"" << get_libraries(line, "py")
                 << "\"" << std::endl;
         }
         else if(line.substr(line.find_last_of(".")+1) == "cpp")
         {
-            std::cout << line << " " << line_num << " \"" << get_libraries(line, "cpp")
+            std::cout << line << " " << line_num << " " << count_comments(line, "cpp")
+                << " \"" << get_libraries(line, "cpp")
                 << "\"" << std::endl;
         }
         else
         {
-            std::cout << line << " " << line_num << " -" << std::endl;
+            std::cout << line << " " << line_num << " - -" << std::endl;
         }
     }
 }
@@ -88,7 +91,7 @@ std::string get_libraries(std::string file_name, std::string ext)
                 }
             }
         }
-        else if (ext == "cpp")
+        else if (ext == "cpp" || ext == "c")
         {
             if(line_buffer.size() >= 2)
             {
@@ -99,4 +102,37 @@ std::string get_libraries(std::string file_name, std::string ext)
     }
 
     return libraries;
+}
+
+int count_comments(std::string file_name, std::string ext)
+{
+
+    std::ifstream fin;
+    std::string line;
+    int num_comment = 0;
+
+    fin.open(file_name);
+    if(fin.fail())
+    {
+        std::cerr << file_name << " not found.\n";
+        return -1;
+    }
+    
+    while(std::getline(fin, line))
+    {
+        if(ext == "py")
+        {
+            if (line.find("#") != std::string::npos)
+                num_comment++;
+
+        }
+        if(ext == "cpp" || ext == "c")
+        {
+            if (line.find("//") != std::string::npos)
+                num_comment++;
+        }
+
+    }
+
+    return num_comment;
 }
