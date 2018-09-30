@@ -9,7 +9,7 @@ $(document).ready(function(){
 		console.log("zoop");
 		var form_data = new FormData(document.getElementById("asgn1"));
 		$.ajax({
-			url: 'upload.php',
+			url: 'php/upload.php',
 			type: 'POST',
 			dataType: 'text',
 			cache: false,
