@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]
+    then
+    echo "usage: $0 docker-image path-to-directory"
+    exit 1
+fi
+
+./extract $1 $2
+
+python3 readFile.py $2 | ./statGen
