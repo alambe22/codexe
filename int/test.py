@@ -56,7 +56,7 @@ def runCommands(cList):
             args = text[0]
             expected = text[1:]
             for i in students:
-                k = Executable("sudo docker run " + i[0] + " bash " + i[2] + "/run.sh " + args, expected)
+                k = Executable("sudo docker run " + i[0] + " bash /" + i[2] + "/run.sh " + args, expected)
                 o[i[1]][f] = k.dict
     for s in students:
         exo("sudo stat/codeStat " + s[0] + " " + s[2])
