@@ -45,14 +45,18 @@ def getCommands():
 
 def runCommands(cList):
     o = {}
+    students = []
     for f in cList:
         if f[0] != ".":
             text = [x for x in read(dir + f).split("\n")[:-1] if not x[0] == "#"]
             args = text[0]
             expected = text[1:]
             for i in read("images").rstrip().split("\n"):
-                k = Executable("sudo docker run " + i + " bash run.sh " + args, expected)
-                o[i + " " + f] = [k.dict]
+                t = i.split(":$:")
+                students += [[t[0],t[1]]]
+            for i in students:
+                k = Executable("sudo docker run " + i[0] + " bash run.sh " + args, expected)
+                o[i[1] + " " + f] = k.dict
     return o
 
 
@@ -68,9 +72,9 @@ def expOut(inst, arg=""):
 
 d = runCommands(getCommands())
 for i in d.keys():
-    print(d[i]["command"] + ":")
-    print("Output: " + d[i]["output"])
-    print("Correct: " + d[i]["expected"])
+    print(i)
+    print("Output: " + str(d[i]["output"]))
+    print("Correct: " + str(d[i]["desired"]))
 
 """t = expOut(read("commands"), "Hello world!")
 for k in t.keys():
