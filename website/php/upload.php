@@ -1,7 +1,7 @@
 <?php
 	//$allowed contains all allowed file types.
 	function upload($class, $assignment){
-		$target_dir = "/var/www/html/" . $class ."/". $assignment . "/";
+		$target_dir = "/var/www/html/classes/" . $class ."/". $assignment . "/";
 		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 		$extenType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 		if($extenType == "txt"){
@@ -13,19 +13,34 @@
 		}
 	}
 	function addClass($class){
-		$target_dir = "/var/www/" . $class;
+		$target_dir = "/var/www/classes/" . $class;
 		mkdir($target_dir);
 	}
 	function addAssignment($class, $assignment){
-		$target_dir = "/var/www/" . $class . "/" . $assignment;
+		$target_dir = "/var/www/classes/" . $class . "/" . $assignment;
 		mkdir($target_dir);
+	}
+	function readFolders($target_dir){
+		$show_json = json_encode(scandir($target_dir));
+		if($show_json != false){
+			echo json_encode(scandir($target_dir));
+		}else{
+			die("json_encode fail: " . json_last_error_msg());
+		}
+	}
+	function runCommand(){
+		echo exec("/var/www/command");
 	}
 	if(isset($_POST['action']) && !empty($_POST['action'])){
 		$action = $_POST['action'];
 		switch($action){
 			case 'addClass' : addClass($_POST['name']);
 			case 'upload' : addClass($_POST['class'], $_POST['assignment']);
-			case 'addAssignment' : addAssignment($_POST['class'], $_POST['assignment']);
+			case 'addAssignment' : addAssignment($_POST['classN'], $_POST['assignmentN']);
+			case 'runCommand' : runCommand();
 		}
+	}
+	if(isset($_GET['action']) && !empty($_GET['action'])){
+		readFolders($_GET['dirs']);
 	}
 ?>

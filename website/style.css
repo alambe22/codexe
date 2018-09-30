@@ -92,6 +92,7 @@ aside{
 	border-right-style: solid;
 	width: 25%;
 	background-color: #ccffe6;
+	overflow: scroll;
 }
 
 #addAsgn{
@@ -112,6 +113,25 @@ aside{
 	background-color: #e6fff2;
 	border-bottom-color:#00e68a;
 }
+#pullAsgn{
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	padding-top: 0em;
+	margin-top: 0em;
+	width: 100%;
+	font-size: 12pt;
+	background-color:	 #00e68a;
+	transition: font-size .5s, background-color .5s, border-bottom-color .5s;
+}
+
+#pullAsgn:hover{
+	font-size: 14pt;
+	background-color: #e6fff2;
+	border-bottom-color:#00e68a;
+}
+
 
 #classTtl{
 	font-size: 30pt;
@@ -169,4 +189,5 @@ section{
 	border-right-style: solid;
 	width: 75%;
 	float: left;
+	
 }
