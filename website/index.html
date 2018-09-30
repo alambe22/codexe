@@ -92,10 +92,19 @@ $(document).ready(function(){
 						return true;
 					}
 		});
+		$("#pullAsgn").before("<div id='"+assignmentName+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ assignmentName+"F' ><span class='assignmentTitle' id='"+assignmentName+"'T>"+ assignmentName +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ assignmentName+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+assignmentName+"'></form></div>");
 	});
 	
 });
-
+<div id="asgnD1" class="assignment">
+		<form action="" method="post" enctype="multipart/form-data" id="asgnF1" >
+			<span class="assignmentTitle" id="asgnT1">Test Assignment:</span>
+			<input type="file" name="fileToUpload" id="fileToUpload" value="">
+			<label for="fileToUpload" class="fileButton">Select file</label>
+			<button class="assignmentButton" id="asgnS1">Select</button>
+			<input type="submit" value="Upload Gradescript" name="submit" class="fileUp" id="fileUp1">
+		</form>
+		</div>
 
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function(){
@@ -122,15 +131,7 @@ xmlhttp.onreadystatechange = function(){
 	<img src="images/logo.gif" height="80%" width="40%" style="margin-left: 16%;float:left;">
 	</header>
 	<aside id="assignment">
-		<div id="asgnD1" class="assignment">
-		<form action="" method="post" enctype="multipart/form-data" id="asgnF1" >
-			<span class="assignmentTitle" id="asgnT1">Test Assignment:</span>
-			<input type="file" name="fileToUpload" id="fileToUpload" value="">
-			<label for="fileToUpload" class="fileButton">Select file</label>
-			<button class="assignmentButton" id="asgnS1">Select</button>
-			<input type="submit" value="Upload Gradescript" name="submit" class="fileUp" id="fileUp1">
-		</form>
-		</div>
+		
 		<button id="pullAsgn">Pull Assignment</button>
 		<button id="addAsgn">Add Assignment</button>
 		
