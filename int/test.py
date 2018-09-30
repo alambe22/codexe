@@ -84,7 +84,7 @@ for s in rc.keys():
     for i in rc[s].keys():
         if not i == "report":
             correct += rc[s][i]["result"]
-            students[s][i] = {
+            students[s]["tests"][i] = {
                 "time": rc[s][i]["time"],
                 #"verbose": ""#rc
             }
