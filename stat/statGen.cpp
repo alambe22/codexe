@@ -34,6 +34,7 @@ int main(){
     }
 }
 
+//Return # of lines in file
 int count_lines(std::string file_name)
 {
     std::ifstream fin;
@@ -104,9 +105,9 @@ std::string get_libraries(std::string file_name, std::string ext)
     return libraries;
 }
 
+//Return # of comments in file
 int count_comments(std::string file_name, std::string ext)
 {
-
     std::ifstream fin;
     std::string line;
     int num_comment = 0;
@@ -131,7 +132,6 @@ int count_comments(std::string file_name, std::string ext)
             if (line.find("//") != std::string::npos)
                 num_comment++;
         }
-
     }
 
     return num_comment;
