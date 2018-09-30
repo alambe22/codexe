@@ -23,8 +23,9 @@
 	if(isset($_POST['action']) && !empty($_POST['action'])){
 		$action = $_POST['action'];
 		switch($action){
-			case 'upload' : 
+			case 'addClass' : addClass($_POST['name']);
+			case 'upload' : addClass($_POST['class'], $_POST['assignment']);
+			
 		}
-	
 	}
 ?>

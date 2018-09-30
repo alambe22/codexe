@@ -22,34 +22,64 @@
 <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 <script type="text/javascript" src="jss/jquery-3.3.1.min.js"></script>
 <script>
+var curClass ="";
+var curAssign ="";
 $(document).ready(function(){
 	$(".fileUp").click(function(){
-		var form_data = new FormData(document.getElementById("asgn1"));
-		$.ajax({
-			url: 'php/upload.php',
-			type: 'POST',
-			dataType: 'text',
-			cache: false,
-			contentType: false,
-			processData: false,
-			data: form_data,
-			success: function(){
-				return true;
-			}
-		});
+		if(curAssign !="" && curClass != ""){
+			var form_data = new FormData(document.getElementById(curAssign));
+			form_data.append('class', curClass);
+			form_data.append('assignment', curAssign);
+			form_data.append('action', 'upload');
+			$.ajax({
+				url: 'php/upload.php',
+				type: 'POST',
+				dataType: 'text',
+				cache: false,
+				contentType: false,
+				processData: false,
+				data: form_data,
+				success: function(){
+					return true;
+				}
+			});
+		}else if(curClass ==""){
+			alert("Please select a class and assigenmnet before trying to upload a gradescript");
+		}else{
+			var form_data = new FormData(document.getElementById(curClass));
+			form_data.append('class', curClass);
+			form_data.append('action', 'upload');
+			$.ajax({
+				url: 'php/upload.php',
+				type: 'POST',
+				dataType: 'text',
+				cache: false,
+				contentType: false,
+				processData: false,
+				data: form_data,
+				success: function(){
+					return true;
+				}
+			});
+		}
 	});
 	$("option").click(function(){
 		if($(this).val() == "addClass"){
 			var className = prompt("Please enter your class name");
 			$.ajax({url: 'php/upload.php',
-					data: {action: 'addClass'},
+					data: {action: 'addClass', name: 'className'},
 					type: 'post',
 					success: function(){
 						return true;
 					}
 			});
+		}else{
+			curClass = $(this).val();
+			$(this).attr("id",curClass);
 		}
 	});
+	
+	
 });
 
 
@@ -75,11 +105,11 @@ xmlhttp.onreadystatechange = function(){
 			<input type="submit" value="Upload Roster" name="submit" style="float:left;width:50%;">
 		</form>
 		</span>
-	<img src="images/logo.gif" height="80%" width="50%" style="margin-left: 9%;float:left;">
+	<img src="images/logo.gif" height="80%" width="40%" style="margin-left: 16%;float:left;">
 	</header>
 	<aside id="assignment">
 		<div id="asgnD1" class="assignment">
-		<form action="upload" method="post" enctype="multipart/form-data" id="asgnF1" >
+		<form action="" method="post" enctype="multipart/form-data" id="asgnF1" >
 			<span class="assignmentTitle" id="asgnT1">Test Assignment:</span>
 			<input type="file" name="fileToUpload" id="fileToUpload" value="">
 			<label for="fileToUpload" class="fileButton">Select file</label>
