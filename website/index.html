@@ -124,6 +124,15 @@ $(document).ready(function(){
 			alert("Class must be selected in order to create assignment");
 		}
 	});
+	$("#mock".click(function(){
+		$.ajax({url: 'php/upload.php',
+				data: {action: 'runCommand'},
+				type: 'post',
+				success: function(){
+					return true;
+				}
+			)};
+	});
 	
 });
 
@@ -152,7 +161,7 @@ xmlhttp.onreadystatechange = function(){
 	<img src="images/logo.gif" height="80%" width="40%" style="margin-left: 16%;float:left;">
 	</header>
 	<aside id="assignment">
-		<div id="Lab 1D" class="assignment"><form action="" method="post" enctype="multipart/form-data" id="Lab 1F"><span class="assignmentTitle" id="Lab 1" t="">Lab 1:</span><input type="file" name="fileToUpload" id="fileToUpload" value=""><label for="fileToUpload" class="fileButton">Choose File</label><button class="assignmentButton" id="Lab 1">Select</button><input type="submit" value="Upload Gradescript" name="submit" class="fileUp" id="Lab 1"></form></div>
+		<div id="Lab 1D" class="assignment"><form action="" method="post" enctype="multipart/form-data" id="Lab 1F"><span class="assignmentTitle" id="Lab 1" t="">Lab 1:</span><input type="file" name="fileToUpload" id="fileToUpload" value=""><label for="fileToUpload" class="fileButton">Choose File</label><button class="assignmentButton" id="mock">Select</button><input type="submit" value="Upload Gradescript" name="submit" class="fileUp" id="Lab 1"></form></div>
 		<button id="pullAsgn">Pull Assignment</button>
 		<button id="addAsgn">Add Assignment</button>
 		
