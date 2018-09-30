@@ -68,12 +68,16 @@ $(document).ready(function(){
 		if((temp == "addClass")){
 			var className = prompt("Please enter your class name");
 			$.ajax({url: 'php/upload.php',
-					data: {action: 'addClass', name: 'className'},
+					data: {action: 'addClass', name: className},
 					type: 'post',
 					success: function(){
 						return true;
 					}
 			});
+			if($("#construct").length){
+				$("#construct").remove();
+			}
+			$("#Adder").prepend("<option val='" + className +"'>"+className+"</option>");
 		}else{
 			curClass = $(this).val();
 			$(this).attr("id",curClass);
@@ -97,7 +101,7 @@ xmlhttp.onreadystatechange = function(){
 	<span id="classTtl">Classes: 
 		<select id="classList">
 			<option value="none" id="construct" style="display:inline-block;"></option>
-			<option value="addClass">Add Class</option>
+			<option value="addClass" id="Adder">Add Class</option>
 		</select>
 		<form>
 			<input type="file" name="rosterUpload" id="rosterUpload" value="">
