@@ -51,6 +51,7 @@ def runCommands(cList):
             args = text[0]
             expected = text[1:]
             for i in read("images").split("\n"):
+                print(i + " HEY HEY HEY")
                 k = Executable(i + " " + args, expected)
                 o += [k.dict]
     return o
