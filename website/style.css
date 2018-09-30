@@ -92,6 +92,7 @@ aside{
 	border-right-style: solid;
 	width: 25%;
 	background-color: #ccffe6;
+	overflow: scroll;
 }
 
 #addAsgn{
@@ -188,5 +189,5 @@ section{
 	border-right-style: solid;
 	width: 75%;
 	float: left;
-	overflow: scroll;
+	
 }
