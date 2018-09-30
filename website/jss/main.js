@@ -1,5 +1,5 @@
 if (typeof jQuery === 'undefined'){
-	console.log("shit");
+	console.log("zoooooooop");
 }
 
 $(document).ready(function(){
