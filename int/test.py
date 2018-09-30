@@ -2,6 +2,7 @@
 from subprocess import call, check_output
 from time import time
 from json import dumps
+import re
 
 dir = "tests/"
 
