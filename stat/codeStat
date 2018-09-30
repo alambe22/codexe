@@ -9,3 +9,6 @@ fi
 ./extract $1 $2
 
 python3 readFile.py $2 | ./statGen
+
+rm -rf $2
+docker rmi $1
