@@ -35,7 +35,7 @@ header{
 .stdId{
 	margin:auto;
 	margin-right: 1em;
-	
+
 }
 .score{
 	margin:auto;
@@ -136,7 +136,7 @@ aside{
 #classTtl{
 	font-size: 30pt;
 	float:left;
-	
+
 }
 
 input[type=submit]{
@@ -164,7 +164,7 @@ font-size: 12pt;
 font-size: 12pt;
 	}
 
-	
+
 .fileButton{
 	float: left;
 	border: 2px solid #00e68a;
@@ -189,5 +189,5 @@ section{
 	border-right-style: solid;
 	width: 75%;
 	float: left;
-	
+	overflow: scroll
 }
