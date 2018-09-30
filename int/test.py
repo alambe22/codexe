@@ -87,10 +87,10 @@ for s in rc.keys():
         if not i == "report":
             correct += rc[s][i]["result"]
             students[s][i] = {
-                "grade": correct / total,
                 "time": rc[s][i]["time"],
-                "verbose": ""#rc
+                #"verbose": ""#rc
             }
     students[s]["report"] = rc[s]["report"]
+    students[s]["grade"] = correct / total
 
 print(dumps(students))
