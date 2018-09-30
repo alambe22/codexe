@@ -1,0 +1,4 @@
+#arguments
+3 * 9
+#expected output
+27

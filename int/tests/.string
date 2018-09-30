@@ -1,0 +1,4 @@
+#arguments
+not math
+#expected output
+error

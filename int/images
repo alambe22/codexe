@@ -1,0 +1,1 @@
+sudo docker run beardlessbeard/polly_lab1 python3 calc.py
