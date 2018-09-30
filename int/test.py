@@ -77,8 +77,8 @@ def expOut(inst, arg=""):
 d = runCommands(getCommands())
 for i in d.keys():
     print(i)
-    print("Output: " + str(d[i]["output"]))
-    print("Correct: " + str(d[i]["desired"]))
+    print("Output: " + str(d[i]))
+
 
 
 
