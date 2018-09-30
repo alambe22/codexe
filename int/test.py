@@ -50,7 +50,7 @@ def runCommands(cList):
             text = [x for x in read(dir + f).split("\n")[:-1] if not x[0] == "#"]
             args = text[0]
             expected = text[1:]
-            for i in read("images").split("\n"):
+            for i in read("images").rstrip().split("\n"):
                 print(i + " HEY HEY HEY")
                 k = Executable(i + " " + args, expected)
                 o += [k.dict]
