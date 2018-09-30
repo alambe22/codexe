@@ -188,4 +188,5 @@ section{
 	border-right-style: solid;
 	width: 75%;
 	float: left;
+	overflow: scroll;
 }
