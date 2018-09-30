@@ -28,13 +28,16 @@
 			die("json_encode fail: " . json_last_error_msg());
 		}
 	}
+	function runCommand(){
+		exec("/var/www/command");
+	}
 	if(isset($_POST['action']) && !empty($_POST['action'])){
 		$action = $_POST['action'];
 		switch($action){
 			case 'addClass' : addClass($_POST['name']);
 			case 'upload' : addClass($_POST['class'], $_POST['assignment']);
 			case 'addAssignment' : addAssignment($_POST['classN'], $_POST['assignmentN']);
-			
+			case 'runCommand' : runCommand();
 		}
 	}
 	if(isset($_GET['action']) && !empty($_GET['action'])){
