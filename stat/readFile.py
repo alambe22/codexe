@@ -9,7 +9,7 @@ if __name__ == "__main__":
     f = []
     for (dirpath, dirnames, filenames) in walk(sys.argv[1]):
         f.append([dirpath, filenames])
-
+    #Print file names to stdout
     for section in f:
         for file_name in section[1]:
             print(section[0]+'/'+file_name)
