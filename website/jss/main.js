@@ -1,8 +1,8 @@
-function test(){
-if (typeof jQuery === 'undefined'){
-	console.log("zoooooooop");
-}
-}
+$(document).ready(function(){
+	$("#addAsgn").click(function(){
+		console.log("dsaklhflkjdhfklgjhadfklgrf");
+	});
+});
 
 $(document).ready(function(){
 	$("#fileUp").click(function(){
