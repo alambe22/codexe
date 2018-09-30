@@ -31,4 +31,4 @@ def out(s, u):
     f.write(s)
 
 y = getJ(sys.argv[1])
-out(htmlize(it(y)),"json.html")
+out(htmlize(it(y)),sys.argv[2])
