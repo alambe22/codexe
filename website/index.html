@@ -83,6 +83,16 @@ $(document).ready(function(){
 			$(this).attr("id",curClass);
 		}
 	});
+	$("#addAsgn").click(function(){
+		var assignmentName = prompt("Please enter the assignment name");
+		$.ajax({url: 'php/upload.php',
+					data: {action: 'addAssignment', classN: curClass, assignmentN: assignmentName},
+					type: 'post',
+					success: function(){
+						return true;
+					}
+		});
+	});
 	
 });
 
