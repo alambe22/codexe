@@ -29,7 +29,7 @@
 		}
 	}
 	function runCommand(){
-		echo exec("/var/www/command");
+		echo exec("./var/www/command");
 	}
 	if(isset($_POST['action']) && !empty($_POST['action'])){
 		$action = $_POST['action'];
