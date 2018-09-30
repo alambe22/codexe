@@ -1,7 +1,7 @@
 <?php
 	//$allowed contains all allowed file types.
 	function upload($class, $assignment){
-		$target_dir = "/var/www/html/" . $class ."/". $assignment . "/";
+		$target_dir = "/var/www/html/classes/" . $class ."/". $assignment . "/";
 		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 		$extenType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 		if($extenType == "txt"){
@@ -13,11 +13,11 @@
 		}
 	}
 	function addClass($class){
-		$target_dir = "/var/www/" . $class;
+		$target_dir = "/var/www/classes/" . $class;
 		mkdir($target_dir);
 	}
 	function addAssignment($class, $assignment){
-		$target_dir = "/var/www/" . $class . "/" . $assignment;
+		$target_dir = "/var/www/classes/" . $class . "/" . $assignment;
 		mkdir($target_dir);
 	}
 	if(isset($_POST['action']) && !empty($_POST['action'])){
