@@ -8,7 +8,7 @@ fi
 
 ./stat/extract $1 $2
 
-python3 ./stat/readFile.py $2 | ./stat/statGen >> report
+python3 ./stat/readFile.py $2 | ./stat/statGen > report
 
 rm -rf $2
 docker rmi $1

@@ -60,9 +60,20 @@ def runCommands(cList):
             for i in students:
                 k = Executable("sudo docker run --rm " + i[0] + " bash /" + i[2] + "/run.sh " + args, expected)
                 o[i[1]][f] = k.dict
-    """for s in students:
+    for s in students:
+        o[s[1]]["report"] = {}
         exo("sudo stat/codeStat " + s[0] + " " + s[2])
-        o[s[1]]["report"] = read("report")"""
+        t = read("report").split("\n")
+        for i in t:
+            j = i.split(" ")
+            libraries = []
+            libraries += re.findall(r'"(.*?)(?<!\\)"', i)
+            report[j[0]] = {
+                    "language": = j[-1],
+                    "lines": j[1],
+                    "comments": j[2],
+                    "libraries": libraries,
+            }
     return o
 
 students = {}
