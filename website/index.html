@@ -41,7 +41,13 @@ $(document).ready(function(){
 	$("option").click(function(){
 		if($(this).val() == "addClass"){
 			var className = prompt("Please enter your class name");
-			
+			$.ajax({url: 'php/upload.php',
+					data: {action: 'addClass'},
+					type: 'post',
+					success: function(){
+						return true;
+					}
+			});
 		}
 	});
 });
@@ -73,7 +79,7 @@ xmlhttp.onreadystatechange = function(){
 	</header>
 	<aside id="assignment">
 		<div id="asgnD1" class="assignment">
-		<form action="" method="post" enctype="multipart/form-data" id="asgnF1" >
+		<form action="upload" method="post" enctype="multipart/form-data" id="asgnF1" >
 			<span class="assignmentTitle" id="asgnT1">Test Assignment:</span>
 			<input type="file" name="fileToUpload" id="fileToUpload" value="">
 			<label for="fileToUpload" class="fileButton">Select file</label>
