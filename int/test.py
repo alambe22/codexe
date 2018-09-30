@@ -65,7 +65,7 @@ def runCommands(cList):
         o[s[1]]["report"] = {}
         exo("sudo stat/codeStat " + s[0] + " " + s[2])
         t = read("report").split("\n")
-        for i in t:
+        for i in t[:-1]:
             j = i.split(" ")
             libraries = []
             libraries += re.findall(r'"(.*?)(?<!\\)"', i)
