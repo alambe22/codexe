@@ -26,7 +26,7 @@ var classes =[];
 var curClass ="";
 var curAssign ="";
 $(document).ready(function(){
-	$.ajax({
+/*	$.ajax({
 		url: 'php/upload.php',
 		type: 'GET',
 		data: {action: 'readDirectory', dirs:'/www/var/classes'},
@@ -50,7 +50,7 @@ $(document).ready(function(){
 			$("#construct").remove();
 		}
 		
-	});
+	});*/
 	$(".fileUp").click(function(){
 		if(curAssign !="" && curClass != ""){
 			var form_data = new FormData(document.getElementById(curAssign));
