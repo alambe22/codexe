@@ -137,7 +137,6 @@ int count_comments(std::string file_name, std::string ext)
         {
             if (line.find("#") != std::string::npos)
                 num_comment++;
-
         }
         if(ext == "cpp" || ext == "c" || ext == "java")
         {
