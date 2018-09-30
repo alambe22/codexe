@@ -2,7 +2,10 @@
 from subprocess import call, check_output
 from time import time
 from json import dumps
+import sys
 import re
+
+dir="tests/"
 
 class Executable(object):
     def __init__(self, command, desired):
