@@ -36,16 +36,16 @@ $(document).ready(function(){
 				$.ajax({
 					url: 'php/upload.php',
 					type: 'GET',
-					data: {action: 'readDirectory', dirs:'/www/var/classes/' +i},
+					data: {action: 'readDirectory', dirs:'/www/var/classes/' +folders.i},
 					success: function(data2){
 						var folders2 = JSON.parse(data2);
 						for(j in folders2){
-							$("#pullAsgn").before("<div id='"+j+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ j+"F' ><span class='assignmentTitle' id='"+j+"'T>"+ j +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ j+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+j+"'></form></div>");
+							$("#pullAsgn").before("<div id='"+folders2.j+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ folders2.j+"F' ><span class='assignmentTitle' id='"+folders2.j+"'T>"+ folders2.j +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ folders2.j+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+folders2.j+"'></form></div>");
 						}
 					}
 				
 				});
-				$("#Adder").before("<option val='" + data[i] +"'>"+data[i]+"</option>");
+				$("#Adder").before("<option val='" + folders.i +"'>"folders.i+"</option>");
 			}
 			$("#construct").remove();
 		}
