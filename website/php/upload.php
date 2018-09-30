@@ -23,7 +23,7 @@
 	function readFolders(){
 		$show_json = json_encode(scandir("/var/www/classes"));
 		if($show_json != false){
-			echo json_encode(scandir("/var/www/classes"));
+			echo (scandir("/var/www/classes");
 		}else{
 			die("json_encode fail: " . json_last_error_msg());
 		}
