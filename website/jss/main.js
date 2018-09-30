@@ -1,3 +1,7 @@
+if (typeof jQuery === 'undefined'){
+	console.log("shit");
+}
+
 $(document).ready(function(){
 	$("#fileUp").click(function(){
 		console.log("zoop");
