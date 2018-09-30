@@ -75,21 +75,24 @@ def runCommands(cList):
             }
     return o
 
-def __main__():
-    students = {}
-    rc = runCommands(getCommands())
-    for s in rc.keys():
-        total = len(rc[s])
-        correct = 0
-        students[s] = {}
-        students[s]["tests"] = {}
-        for i in rc[s].keys():
-            if not i == "report":
-                correct += rc[s][i]["result"]
-                students[s]["tests"][i] = {
-                    "time": rc[s][i]["time"],
-                    #"verbose": ""#rc
-                }
-        students[s]["report"] = rc[s]["report"]
-        students[s]["grade"] = correct / total
-    return dumps(students)
+def out(s, u):
+    f = open(u, "w")
+    f.write(s)
+
+students = {}
+rc = runCommands(getCommands())
+for s in rc.keys():
+    total = len(rc[s])
+    correct = 0
+    students[s] = {}
+    students[s]["tests"] = {}
+    for i in rc[s].keys():
+        if not i == "report":
+            correct += rc[s][i]["result"]
+            students[s]["tests"][i] = {
+                "time": rc[s][i]["time"],
+                #"verbose": ""#rc
+            }
+    students[s]["report"] = rc[s]["report"]
+    students[s]["grade"] = correct / total
+out(dumps(students), "out.json")
