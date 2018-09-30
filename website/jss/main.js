@@ -15,7 +15,10 @@ $(document).ready(function(){
 			cache: false,
 			contentType: false,
 			processData: false,
-			data: form_data
+			data: form_data,
+			success: function(){
+				return true;
+			}
 		});
 	});
 });
