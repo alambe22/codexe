@@ -21,27 +21,72 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 <script type="text/javascript" src="jss/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="jss/main.js"></script>
+<script>
+$(document).ready(function(){
+	$(".fileUp").click(function(){
+		var form_data = new FormData(document.getElementById("asgn1"));
+		$.ajax({
+			url: 'php/upload.php',
+			type: 'POST',
+			dataType: 'text',
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: form_data,
+			success: function(){
+				return true;
+			}
+		});
+	});
+	$("option").click(function(){
+		if($(this).val() == "addClass"){
+			var className = prompt("Please enter your class name");
+			
+		}
+	});
+});
+
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function(){
+	if(this.readyState == 4 && this.status == 200){
+		var myObject = JSON.parse(this.responseText);
+		
+	}
+};
+</script>
 </head>
 
 <body>
-	<header onload="test()">
-	
-		
+	<header>
+	<span id="classTtl">Classes: 
+		<select>
+			<option value="addClass">Add Class</option>
+		</select>
+		<form>
+			<input type="file" name="rosterUpload" id="rosterUpload" value="">
+			<label for="fileToUpload" class="fileButton">Select file</label>
+			<input type="submit" value="Upload Roster" name="submit" style="float:left;width:50%;">
+		</form>
+		</span>
+	<img src="images/logo.gif" height="80%" width="50%" style="margin-left: 9%;float:left;">
 	</header>
 	<aside id="assignment">
-		<form action="" method="post" enctype="multipart/form-data" id="asgn1" class="assignment">
-			<span class="assignmentTitle">Test Assignment:</span>
-			<input type="file" name="fileToUpload" id="fileToUpload">
-			<input type="submit" value="Upload Gradescript" name="submit" id="fileUp">
+		<div id="asgnD1" class="assignment">
+		<form action="" method="post" enctype="multipart/form-data" id="asgnF1" >
+			<span class="assignmentTitle" id="asgnT1">Test Assignment:</span>
+			<input type="file" name="fileToUpload" id="fileToUpload" value="">
+			<label for="fileToUpload" class="fileButton">Select file</label>
+			<button class="assignmentButton" id="asgnS1">Select</button>
+			<input type="submit" value="Upload Gradescript" name="submit" class="fileUp" id="fileUp1">
 		</form>
-		<button id="addAsgn">Add Assignment</button>
+		</div>
+		<button id="addAsgn">Pull Assignment</button>
+		
 	</aside>
 	<section id="overview">
-		<div  class="student" id="student1"><span class="stdId" id="alambe22">alambe22 </span><span> chck </span><span id="grade"> 54% </span><span> rf </span><span id="rflags"> 5 </span><span> yf </span><span id="yflags"> 54 </span></div>
-		<form action="php/runPython.php">
-			<input type="submit" value="Run Tests" name="submit">
-		</form>
+		<div  class="student" id="student1"><span class="stdId" id="alambe22">alambe22 </span><span class="score" id="score1"> 54% </span><progress class="visGrade" id="bar1" value="53" max="100">5</progress></div>
+		
 	</section>
 	
 </body>

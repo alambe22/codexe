@@ -19,20 +19,28 @@ body{
 }
 header{
 	width: 100%;
-	height: 5%;
+	height: 15%;
 	border-style: solid;
 	float: left;
 }
 
 .student{
 	width: 100%;
+	text-align:center;
 	border-bottom-style: solid;
 	border-bottom-color: #00e68a;
 	background-color: #e6fff2;
+	font-size: 14pt;
 }
 .stdId{
-	margin-left: .4em;
+	margin:auto;
+	margin-right: 1em;
+	
 }
+.score{
+	margin:auto;
+}
+
 .assignmentTitle{
 	width: 100%;
 	border-bottom: solid;
@@ -40,20 +48,45 @@ header{
 	background: #e6fff2;
 	color: #000;
 	display: inline-block;
+	font-size: 14pt;
 }
 
 .assignment{
 	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-style: solid;
 	width: 100%;
 	display: inline-block;
-	border-bottom-color: #00e68a;
+	border-bottom-color: #00b36b;
+	border-right-color: #00b36b;
+	border-left-color: #00b36b;
 	background-color: #e6fff2;
 	color: #000;
 }
 
+
+
+.assignmentButton{
+	float: right;
+	border: 2px solid #00e68a;
+	background-color: #00e68a;
+	text-decoration: none;
+	color:#000;
+	width: 20%;
+	font-size: 12pt;
+	transition: background-color .5s, color .5s, border .5s;
+	display: inline;
+}
+
+.assignmentButton:hover{
+	background-color: #00cc66;
+	color: #000;
+	border: 2px solid #000000;
+}
+
 aside{
 	float: left;
-	height: 95%;
+	height: 85%;
 	border-bottom-style: solid;
 	border-left-style: solid;
 	border-right-style: solid;
@@ -72,7 +105,6 @@ aside{
 	font-size: 12pt;
 	background-color:	 #00e68a;
 	transition: font-size .5s, background-color .5s, border-bottom-color .5s;
-	
 }
 
 #addAsgn:hover{
@@ -81,6 +113,11 @@ aside{
 	border-bottom-color:#00e68a;
 }
 
+#classTtl{
+	font-size: 30pt;
+	float:left;
+	
+}
 
 input[type=submit]{
 	float: right;
@@ -88,6 +125,8 @@ input[type=submit]{
 	background-color: #00e68a;
 	text-decoration: none;
 	color:#000;
+	width: 40%;
+	font-size: 12pt;
 	transition: background-color .5s, color .5s, border .5s;
 }
 input[type=submit]:hover{
@@ -96,10 +135,38 @@ input[type=submit]:hover{
 	border: 2px solid #000000;
 }
 
+#fileToUpload{
+	display: none;
+font-size: 12pt;
+	}
+#rosterUpload{
+	display: none;
+font-size: 12pt;
+	}
+
+	
+.fileButton{
+	float: left;
+	border: 2px solid #00e68a;
+	background-color: #00e68a;
+	text-decoration: none;
+	color:#000;
+	width: 40%;
+	padding-top: .15em;
+	font-size: 12pt;
+	transition: background-color .5s, color .5s, border .5s;
+}
+
+.fileButton:hover{
+	background-color: #00cc66;
+	color: #000;
+	border: 2px solid #000000;
+}
+
 section{
-	height: 95%;
+	height: 85%;
 	border-bottom-style: solid;
 	border-right-style: solid;
-	width:75%;
+	width: 75%;
 	float: left;
 }
