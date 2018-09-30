@@ -4,6 +4,8 @@ from time import time
 from json import dumps
 import re
 
+dir="tests/"
+
 class Executable(object):
     def __init__(self, command, desired):
         self.command = command
