@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from subprocess import call, check_output
 from time import time
+from json import dumps
 
 dir = "tests/"
 
@@ -78,6 +79,7 @@ d = runCommands(getCommands())
 for i in d.keys():
     print(i)
     print("Output: " + str(d[i]))
+print(d.dumps())
 
 
 
