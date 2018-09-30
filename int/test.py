@@ -70,7 +70,7 @@ d = runCommands(getCommands())
 for i in d.keys():
     print(d[i]["command"] + ":")
     print("Output: " + str(d[i]["output"]))
-    print("Correct: " + str(d[i]["expected"]))
+    print("Correct: " + d[i]["desired"])
 
 """t = expOut(read("commands"), "Hello world!")
 for k in t.keys():
