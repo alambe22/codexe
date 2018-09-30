@@ -2,6 +2,7 @@
 from subprocess import call, check_output
 from time import time
 from json import dumps
+import re
 
 dir = "tests/"
 
@@ -64,12 +65,12 @@ def runCommands(cList):
         o[s[1]]["report"] = {}
         exo("sudo stat/codeStat " + s[0] + " " + s[2])
         t = read("report").split("\n")
-        for i in t:
+        for i in t[:-1]:
             j = i.split(" ")
             libraries = []
             libraries += re.findall(r'"(.*?)(?<!\\)"', i)
-            report[j[0]] = {
-                    "language": = j[-1],
+            o[s[1]]["report"][j[0]] = {
+                    "language": j[-1],
                     "lines": j[1],
                     "comments": j[2],
                     "libraries": libraries,
@@ -81,12 +82,15 @@ rc = runCommands(getCommands())
 for s in rc.keys():
     total = len(rc[s])
     correct = 0
+    students[s] = {}
     for i in rc[s].keys():
-        correct += rc[s][i]["result"]
-    students[s] = {
-        "grade": correct / total,
-        "time": rc[s][i]["time"],
-        "verbose": ""#rc
-    }
+        if not i == "report":
+            correct += rc[s][i]["result"]
+            students[s][i] = {
+                "time": rc[s][i]["time"],
+                #"verbose": ""#rc
+            }
+    students[s]["report"] = rc[s]["report"]
+    students[s]["grade"] = correct / total
 
 print(dumps(students))
