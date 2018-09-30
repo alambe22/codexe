@@ -22,9 +22,35 @@
 <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 <script type="text/javascript" src="jss/jquery-3.3.1.min.js"></script>
 <script>
+var classes =[];
 var curClass ="";
 var curAssign ="";
 $(document).ready(function(){
+	$.ajax({
+		url: 'php/upload.php',
+		type: 'GET',
+		data: {action: 'readDirectory', dir:'/www/var/classes/'},
+		success: function(data){
+			var i = 0;
+			for(i=0; i< data.length; i++){
+				$.ajax({
+					url: 'php/upload.php',
+					type: 'GET',
+					data: {action: 'readDirectory', dir:'/www/var/classes/' +data[i]},
+					success: function(data2){
+						var j=0;
+						for(j=0; j<data.length; j++){
+							$("#pullAsgn").before("<div id='"+data2[j]+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ data2[j]+"F' ><span class='assignmentTitle' id='"+data2[j]+"'T>"+ data2[j] +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ data2[j]+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+data2[j]+"'></form></div>");
+						}
+					}
+				
+				});
+				$("#Adder").before("<option val='" + data[i] +"'>"+data[i]+"</option>");
+			}
+			$("#construct").remove();
+		}
+		
+	});
 	$(".fileUp").click(function(){
 		if(curAssign !="" && curClass != ""){
 			var form_data = new FormData(document.getElementById(curAssign));

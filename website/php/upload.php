@@ -20,12 +20,16 @@
 		$target_dir = "/var/www/classes/" . $class . "/" . $assignment;
 		mkdir($target_dir);
 	}
+	function readFolders($target_dir){
+		return scandir($target_dir);
+	}
 	if(isset($_POST['action']) && !empty($_POST['action'])){
 		$action = $_POST['action'];
 		switch($action){
 			case 'addClass' : addClass($_POST['name']);
 			case 'upload' : addClass($_POST['class'], $_POST['assignment']);
 			case 'addAssignment' : addAssignment($_POST['classN'], $_POST['assignmentN']);
+			case 'readDirectory' : readFolders($_POST['dir']);
 		}
 	}
 ?>
