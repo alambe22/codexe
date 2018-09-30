@@ -64,7 +64,8 @@ $(document).ready(function(){
 		}
 	});
 	$("#classTtl").change(function(){
-		if($(this).val() == "addClass"){
+		var temp = $(this).val();
+		if($(temp == "addClass"){
 			var className = prompt("Please enter your class name");
 			$.ajax({url: 'php/upload.php',
 					data: {action: 'addClass', name: 'className'},
