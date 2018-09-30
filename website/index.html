@@ -63,7 +63,7 @@ $(document).ready(function(){
 			});
 		}
 	});
-	$("option").click(function(){
+	$("#classTtl").change(function(){
 		if($(this).val() == "addClass"){
 			var className = prompt("Please enter your class name");
 			$.ajax({url: 'php/upload.php',
@@ -79,7 +79,6 @@ $(document).ready(function(){
 		}
 	});
 	
-	
 });
 
 
@@ -87,7 +86,6 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function(){
 	if(this.readyState == 4 && this.status == 200){
 		var myObject = JSON.parse(this.responseText);
-		
 	}
 };
 </script>
@@ -96,7 +94,7 @@ xmlhttp.onreadystatechange = function(){
 <body>
 	<header>
 	<span id="classTtl">Classes: 
-		<select>
+		<select id="classList">
 			<option value="addClass">Add Class</option>
 		</select>
 		<form>
