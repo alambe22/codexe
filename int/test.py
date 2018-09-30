@@ -10,7 +10,7 @@ class Executable(object):
         self.command = command
         time_init = time()
         try:
-            self.output = str(self.exo())
+            self.output = self.exo()
         except Exception as e:
             if Exception == KeyboardInterrupt: raise
             self.output = e
@@ -27,7 +27,11 @@ class Executable(object):
 
     def exo(self):
         """executes string as command with output"""
-        return check_output(self.command.split(" ")).decode("utf-8").rstrip()
+        o = check_output(self.command.split(" ")).decode("utf-8").rstrip()
+        if o is CalledProcessError:
+            return "Error"
+        else:
+            return str(o)
 
 
 
