@@ -10,7 +10,7 @@ class Executable(object):
         self.command = command
         time_init = time()
         try:
-            self.output = self.exo()
+            self.output = str(self.exo())
         except Exception as e:
             if Exception == KeyboardInterrupt: raise
             self.output = e
