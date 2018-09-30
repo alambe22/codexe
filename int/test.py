@@ -75,7 +75,7 @@ for s in rc.keys():
     students[s] = {
         "grade": correct / total,
         "time": rc[s][i]["time"],
-        "verbose": rc
+        "verbose": ""#rc
     }
 
 print(dumps(students))
