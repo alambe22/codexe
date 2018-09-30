@@ -25,7 +25,7 @@
 		switch($action){
 			case 'addClass' : addClass($_POST['name']);
 			case 'upload' : addClass($_POST['class'], $_POST['assignment']);
-			
+			case 'addAssignment' : addAssignment($_POST['class'], $_POST['assignment']);
 		}
 	}
 ?>
