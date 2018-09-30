@@ -25,14 +25,12 @@
 var classes =[];
 var curClass ="";
 var curAssign ="";
-var jj ="";
 fetch('json.html')
 .then(response => response.text())
-.then(text => jj = text;)
-
+.then(text => console.log(text))
 $(document).ready(function(){
 	$("#btn1").click(function(){
-		$("#jason").append(jj);
+		$("#jason").append("TEST");
 });
 /*	$.ajax({
 		url: 'php/upload.php',
