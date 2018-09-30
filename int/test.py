@@ -28,10 +28,7 @@ class Executable(object):
     def exo(self):
         """executes string as command with output"""
         o = check_output(self.command.split(" ")).decode("utf-8").rstrip()
-        if o is CalledProcessError:
-            return "Error"
-        else:
-            return str(o)
+        return str(o)
 
 
 
