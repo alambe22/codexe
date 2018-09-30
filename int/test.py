@@ -76,11 +76,23 @@ def expOut(inst, arg=""):
             raise TypeError("Instruction file incorrectly formatted")
     return o
 
-d = runCommands(getCommands())
+students = {}
+rc = runCommands(getCommands())
+for s in rc.keys():
+    total = len(rc[s])
+    correct = 0
+    for i in rc[s].keys():
+        correct += rc[s][i]["result"]
+    students[s] = {
+        "grade": correct / total,
+        "time": rc[s][i]["time"],
+        "verbose": rc
+    }
+
 for i in d.keys():
     print(i)
     print("Output: " + str(d[i]))
-print(dumps(d))
+print(dumps(students))
 
 
 
