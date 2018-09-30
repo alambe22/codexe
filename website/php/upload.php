@@ -29,7 +29,10 @@
 			case 'addClass' : addClass($_POST['name']);
 			case 'upload' : addClass($_POST['class'], $_POST['assignment']);
 			case 'addAssignment' : addAssignment($_POST['classN'], $_POST['assignmentN']);
-			case 'readDirectory' : readFolders($_POST['dir']);
+			
 		}
+	}
+	if(isset($_GET['action']) && !empty($_GET['action'])){
+		readFolders($_GET['dir']);
 	}
 ?>
