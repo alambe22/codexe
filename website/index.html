@@ -124,7 +124,7 @@ $(document).ready(function(){
 			alert("Class must be selected in order to create assignment");
 		}
 	});
-	$("#mock".click(function(){
+	$("#mock").click(function(){
 		$.ajax({url: 'php/upload.php',
 				data: {action: 'runCommand'},
 				type: 'post',
