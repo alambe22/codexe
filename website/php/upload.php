@@ -21,7 +21,7 @@
 		mkdir($target_dir);
 	}
 	function readFolders($target_dir){
-		echo json_encode(scandir($target_dir));
+		echo scandir($target_dir);
 	}
 	if(isset($_POST['action']) && !empty($_POST['action'])){
 		$action = $_POST['action'];
