@@ -69,7 +69,7 @@ def runCommands(cList):
             libraries = []
             libraries += re.findall(r'"(.*?)(?<!\\)"', i)
             report[j[0]] = {
-                    "language": = j[-1],
+                    "language": j[-1],
                     "lines": j[1],
                     "comments": j[2],
                     "libraries": libraries,
