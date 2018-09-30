@@ -65,7 +65,7 @@ $(document).ready(function(){
 	});
 	$("#classList").change(function(){
 		var temp = $(this).val();
-		if($(temp == "addClass"){
+		if((temp == "addClass")){
 			var className = prompt("Please enter your class name");
 			$.ajax({url: 'php/upload.php',
 					data: {action: 'addClass', name: 'className'},
@@ -96,7 +96,6 @@ xmlhttp.onreadystatechange = function(){
 	<header>
 	<span id="classTtl">Classes: 
 		<select id="classList">
-			<option value="non"></option>
 			<option value="addClass">Add Class</option>
 		</select>
 		<form>
