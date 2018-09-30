@@ -77,7 +77,7 @@ $(document).ready(function(){
 			if($("#construct").length){
 				$("#construct").remove();
 			}
-			$("#Adder").prepend("<option val='" + className +"'>"+className+"</option>");
+			$("#Adder").before("<option val='" + className +"'>"+className+"</option>");
 		}else{
 			curClass = $(this).val();
 			$(this).attr("id",curClass);
