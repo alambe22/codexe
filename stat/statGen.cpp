@@ -27,6 +27,12 @@ int main(){
                 << " \"" << get_libraries(line, "cpp")
                 << "\"" << std::endl;
         }
+        else if(line.substr(line.find_last_of(".")+1) == "java")
+        {
+            std::cout << line << " " << line_num << " " << count_comments(line, "java")
+                << " \"" << get_libraries(line, "java")
+                << "\"" << std::endl;
+        }
         else
         {
             std::cout << line << " " << line_num << " - -" << std::endl;
@@ -77,7 +83,7 @@ std::string get_libraries(std::string file_name, std::string ext)
         while(sin >> word)
             line_buffer.push_back(word);
 
-        if(ext == "py")
+        if(ext == "py" || ext == "java")
         {
             if(line_buffer.size() >= 2)
             {
@@ -118,7 +124,7 @@ int count_comments(std::string file_name, std::string ext)
         std::cerr << file_name << " not found.\n";
         return -1;
     }
-    
+
     while(std::getline(fin, line))
     {
         if(ext == "py")
@@ -127,7 +133,7 @@ int count_comments(std::string file_name, std::string ext)
                 num_comment++;
 
         }
-        if(ext == "cpp" || ext == "c")
+        if(ext == "cpp" || ext == "c" || ext == "java")
         {
             if (line.find("//") != std::string::npos)
                 num_comment++;
