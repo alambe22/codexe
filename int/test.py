@@ -60,20 +60,9 @@ def runCommands(cList):
             for i in students:
                 k = Executable("sudo docker run --rm " + i[0] + " bash /" + i[2] + "/run.sh " + args, expected)
                 o[i[1]][f] = k.dict
-    for s in students:
+    """for s in students:
         exo("sudo stat/codeStat " + s[0] + " " + s[2])
-        o[s[1]]["report"] = read("report")
-    return o
-
-
-def expOut(inst, arg=""):
-    o = {}
-    for i in [x for x in inst.split("\n")[:-1] if not x[0] == "#"]:
-        k = i.split(":$:")
-        try:
-            o[k[0]] = Executable(k[0] + " " + arg, k[1].split("|:|")).dict
-        except IndexError:
-            raise TypeError("Instruction file incorrectly formatted")
+        o[s[1]]["report"] = read("report")"""
     return o
 
 students = {}
@@ -89,15 +78,4 @@ for s in rc.keys():
         "verbose": rc
     }
 
-for i in d.keys():
-    print(i)
-    print("Output: " + str(d[i]))
 print(dumps(students))
-
-
-
-
-"""t = expOut(read("commands"), "Hello world!")
-for k in t.keys():
-    print(k)
-    print(t[k])"""
