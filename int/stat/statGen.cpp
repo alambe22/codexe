@@ -18,26 +18,26 @@ int main(){
         if(line.substr(line.find_last_of(".")+1) == "py")
         {
             std::cout << line << " " << line_num << " " << count_comments(line, "py")
-                << " \"" << get_libraries(line, "py")
-                << "\" python" << std::endl;
+                << " python " << get_libraries(line, "py")
+                << std::endl;
         }
         else if(line.substr(line.find_last_of(".")+1) == "cpp")
         {
             std::cout << line << " " << line_num << " " << count_comments(line, "cpp")
-                << " \"" << get_libraries(line, "cpp")
-                << "\" c++" << std::endl;
+                << " c++ " << get_libraries(line, "cpp")
+                << std::endl;
         }
         else if(line.substr(line.find_last_of(".")+1) == "java")
         {
             std::cout << line << " " << line_num << " " << count_comments(line, "java")
-                << " \"" << get_libraries(line, "java")
-                << "\" java" << std::endl;
+                << " java " << get_libraries(line, "java")
+                << std::endl;
         }
         else if(line.substr(line.find_last_of(".")+1) == "c")
         {
             std::cout << line << " " << line_num << " " << count_comments(line, "c")
-                << " \"" << get_libraries(line, "c")
-                << "\" c" << std::endl;
+                << " c " << get_libraries(line, "c")
+                << std::endl;
         }
         else
         {
