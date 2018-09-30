@@ -43,13 +43,13 @@ $(document).ready(function(){
 							$("#pullAsgn").before("<div id='"+folders2.j+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ folders2.j+"F' ><span class='assignmentTitle' id='"+folders2.j+"'T>"+ folders2.j +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ folders2.j+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+folders2.j+"'></form></div>");
 						}
 					}
-				
+
 				});
 				$("#Adder").before("<option val='" + folders.i +"'>"+folders.i+"</option>");
 			}
 			$("#construct").remove();
 		}
-		
+
 	});*/
 	$(".fileUp").click(function(){
 		if(curAssign !="" && curClass != ""){
@@ -133,7 +133,7 @@ $(document).ready(function(){
 				}
 			});
 	});
-	
+
 });
 
 var xmlhttp = new XMLHttpRequest();
@@ -147,7 +147,7 @@ xmlhttp.onreadystatechange = function(){
 
 <body>
 	<header>
-	<span id="classTtl">Classes: 
+	<span id="classTtl">Classes:
 		<select id="classList">
 			<!--<option value="none" id="construct" style="display:inline-block;"></option>-->
 			<option value="temp">CS 101</option>
@@ -159,18 +159,18 @@ xmlhttp.onreadystatechange = function(){
 			<input type="submit" value="Upload Roster" name="submit" style="float:left;width:50%;">
 		</form>
 		</span>
-	<img src="images/logo.gif" height="80%" width="40%" style="margin-left: 16%;float:left;">
+	<img src="images/logo.gif" height="120em" width="350em" style="margin-left: 26%;float:left;">
 	</header>
 	<aside id="assignment">
 		<div id="Lab 1D" class="assignment"><form action="" method="post" enctype="multipart/form-data" id="Lab 1F"><span class="assignmentTitle" id="Lab 1" t="">Lab 1:</span><input type="file" name="fileToUpload" id="fileToUpload" value=""><label for="fileToUpload" class="fileButton">Choose File</label><button class="assignmentButton" id="mock">Select</button><input type="submit" value="Upload Gradescript" name="submit" class="fileUp" id="Lab 1"></form></div>
 		<button id="pullAsgn">Pull Assignment</button>
 		<button id="addAsgn">Add Assignment</button>
-		
+
 	</aside>
 	<section id="overview">
 		<div  class="student" id="student1"><span class="stdId" id="alambe22">alambe22 </span><span class="score" id="score1"> 54% </span><progress class="visGrade" id="bar1" value="53" max="100">5</progress></div>
-		
+
 	</section>
-	
+
 </body>
 </html>
