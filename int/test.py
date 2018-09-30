@@ -92,6 +92,7 @@ for s in rc.keys():
             correct += rc[s][i]["result"]
             students[s]["tests"][i] = {
                 "time": rc[s][i]["time"],
+                "correct?": rc[s][i]["result"]
                 #"verbose": ""#rc
             }
     students[s]["report"] = rc[s]["report"]
