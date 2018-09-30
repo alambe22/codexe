@@ -44,7 +44,7 @@ def getCommands():
 
 
 def runCommands(cList):
-    o = []
+    o = {}
     for f in cList:
         if f[0] != ".":
             text = [x for x in read(dir + f).split("\n")[:-1] if not x[0] == "#"]
@@ -52,7 +52,7 @@ def runCommands(cList):
             expected = text[1:]
             for i in read("images").rstrip().split("\n"):
                 k = Executable("sudo docker run " + i + " bash run.sh " + args, expected)
-                o += [k.dict]
+                o[i + " " + f] = [k.dict]
     return o
 
 
