@@ -1,6 +1,5 @@
 <?php
 	//$allowed contains all allowed file types.
-	function upload(){
 	$target_dir = "/var/www/html/";
 	$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 	$uploadOk = 1;
@@ -13,5 +12,5 @@
 			echo "Sorry, there was an error during upload. Please try again.";
 		}
 	}
-	}
+	
 ?>
