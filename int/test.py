@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from subprocess import call, check_output
 from time import time
+from json import dumps
 
 dir = "tests/"
 
@@ -12,7 +13,7 @@ class Executable(object):
             self.output = self.exo()
         except Exception as e:
             if Exception == KeyboardInterrupt: raise
-            self.output = e
+            self.output = "Error"
         self.time = time() - time_init
         self.desired = desired
         self.result = self.output in desired
@@ -26,7 +27,8 @@ class Executable(object):
 
     def exo(self):
         """executes string as command with output"""
-        return check_output(self.command.split(" ")).decode("utf-8").rstrip()
+        o = check_output(self.command.split(" ")).decode("utf-8").rstrip()
+        return str(o)
 
 
 
@@ -56,11 +58,11 @@ def runCommands(cList):
             args = text[0]
             expected = text[1:]
             for i in students:
-                k = Executable("sudo docker run " + i[0] + " bash " + i[2] + "/run.sh " + args, expected)
+                k = Executable("sudo docker run --rm " + i[0] + " bash /" + i[2] + "/run.sh " + args, expected)
                 o[i[1]][f] = k.dict
     for s in students:
         exo("sudo stat/codeStat " + s[0] + " " + s[2])
-        o[s[1]]["report"] = read("stat/report")
+        o[s[1]]["report"] = read("report")
     return o
 
 
@@ -77,8 +79,9 @@ def expOut(inst, arg=""):
 d = runCommands(getCommands())
 for i in d.keys():
     print(i)
-    print("Output: " + str(d[i]["output"]))
-    print("Correct: " + str(d[i]["desired"]))
+    print("Output: " + str(d[i]))
+print(dumps(d))
+
 
 
 
