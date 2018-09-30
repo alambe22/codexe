@@ -10,7 +10,7 @@ form{
 html{
 	height: 99.5%;
 	width:99.5%;
-	
+	overflow: hidden;
 }
 body{
 	height: 99.4%;
