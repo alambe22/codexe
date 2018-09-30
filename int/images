@@ -1,2 +1,1 @@
-sudo docker run beardlessbeard/polly_lab1 python3 calc.py
-sudo docker run beardlessbeard/johnny_lab1 java calc
+beardlessbeard/polly_lab1 python3 calc.py

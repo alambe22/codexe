@@ -51,7 +51,7 @@ def runCommands(cList):
             args = text[0]
             expected = text[1:]
             for i in read("images").rstrip().split("\n"):
-                k = Executable(i + " " + args, expected)
+                k = Executable("sudo docker run " + i + " " + args, expected)
                 o += [k.dict]
     return o
 
