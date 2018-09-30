@@ -21,6 +21,12 @@ if __name__ == "__main__":
                 cmt_list.append(line)
             elif len(line) > 0:
                 src_list.append(line)
+    if split_file[-1] == "c" or split_file[-1] == "cpp" or split_file[-1] == "java":
+        for line in file:
+            if "//" in line:
+                cmt_list.append(line)
+            elif len(line) > 0:
+                src_list.append(line)
 
     cmt_list = (l.rstrip() for l in cmt_list)
     cmt_list = list(l for l in cmt_list if l)
