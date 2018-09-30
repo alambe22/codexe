@@ -84,15 +84,19 @@ $(document).ready(function(){
 		}
 	});
 	$("#addAsgn").click(function(){
-		var assignmentName = prompt("Please enter the assignment name");
-		$.ajax({url: 'php/upload.php',
-					data: {action: 'addAssignment', classN: curClass, assignmentN: assignmentName},
-					type: 'post',
-					success: function(){
-						return true;
-					}
-		});
-		$("#pullAsgn").before("<div id='"+assignmentName+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ assignmentName+"F' ><span class='assignmentTitle' id='"+assignmentName+"'T>"+ assignmentName +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ assignmentName+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+assignmentName+"'></form></div>");
+		if(curClass!=""){
+			var assignmentName = prompt("Please enter the assignment name");
+			$.ajax({url: 'php/upload.php',
+						data: {action: 'addAssignment', classN: curClass, assignmentN: assignmentName},
+						type: 'post',
+						success: function(){
+							return true;
+						}
+			});
+			$("#pullAsgn").before("<div id='"+assignmentName+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ assignmentName+"F' ><span class='assignmentTitle' id='"+assignmentName+"'T>"+ assignmentName +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ assignmentName+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+assignmentName+"'></form></div>");
+		}else{
+			alert("Class must be selected in order to create assignment");
+		}
 	});
 	
 });
