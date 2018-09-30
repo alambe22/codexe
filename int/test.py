@@ -46,14 +46,15 @@ def getCommands():
 def runCommands(cList):
     o = {}
     students = []
+    for i in read("images").rstrip().split("\n"):
+        t = i.split(":$:")
+        students += [[t[0],t[1],t[2]]]
+        o[t[1]] = {}
     for f in cList:
         if f[0] != ".":
             text = [x for x in read(dir + f).split("\n")[:-1] if not x[0] == "#"]
             args = text[0]
             expected = text[1:]
-            for i in read("images").rstrip().split("\n"):
-                t = i.split(":$:")
-                students += [[t[0],t[1],t[2]]]
             for i in students:
                 k = Executable("sudo docker run " + i[0] + " bash " + i[2] + "/run.sh " + args, expected)
                 o[i[1]][f] = k.dict
