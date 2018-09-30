@@ -60,7 +60,7 @@ def runCommands(cList):
                 o[i[1]][f] = k.dict
     for s in students:
         exo("sudo stat/codeStat " + s[0] + " " + s[2])
-        o[s[1]]["report"] = read("stat/report")
+        o[s[1]]["report"] = read("report")
     return o
 
 
