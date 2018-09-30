@@ -66,8 +66,11 @@ def expOut(inst, arg=""):
             raise TypeError("Instruction file incorrectly formatted")
     return o
 
-print(runCommands(getCommands()))
-
+d = runCommands(getCommands())
+for i in d.keys():
+    print(d[i]["command"]":")
+    print("Output: " + d[i]["output"])
+    print("Correct: " + d[i]["expected"])
 
 """t = expOut(read("commands"), "Hello world!")
 for k in t.keys():
