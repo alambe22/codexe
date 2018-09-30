@@ -67,13 +67,11 @@ def runCommands(cList):
         t = read("report").split("\n")
         for i in t[:-1]:
             j = i.split(" ")
-            libraries = []
-            libraries += re.findall(r'"(.*?)(?<!\\)"', i)
             o[s[1]]["report"][j[0]] = {
-                    "language": j[-1],
+                    "language": j[3],
                     "lines": j[1],
                     "comments": j[2],
-                    "libraries": libraries,
+                    "libraries": j[4:],
             }
     return o
 
