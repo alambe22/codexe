@@ -83,7 +83,8 @@ for s in rc.keys():
     total = len(rc[s])
     correct = 0
     for i in rc[s].keys():
-        correct += rc[s][i]["result"]
+        if not i == "report":
+            correct += rc[s][i]["result"]
     students[s] = {
         "grade": correct / total,
         "time": rc[s][i]["time"],
