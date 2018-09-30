@@ -13,7 +13,7 @@ class Executable(object):
             self.output = self.exo()
         except Exception as e:
             if Exception == KeyboardInterrupt: raise
-            self.output = e
+            self.output = "Error"
         self.time = time() - time_init
         self.desired = desired
         self.result = self.output in desired
