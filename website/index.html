@@ -36,11 +36,11 @@ $(document).ready(function(){
 				$.ajax({
 					url: 'php/upload.php',
 					type: 'GET',
-					data: {action: 'readDirectory', dirs:'/www/var/classes/' +data[i]},
+					data: {action: 'readDirectory', dirs:'/www/var/classes/' +i},
 					success: function(data2){
-						var j=0;
-						for(j=0; j<data.length; j++){
-							$("#pullAsgn").before("<div id='"+data2[j]+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ data2[j]+"F' ><span class='assignmentTitle' id='"+data2[j]+"'T>"+ data2[j] +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ data2[j]+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+data2[j]+"'></form></div>");
+						var folders2 = JSON.parse(data2);
+						for(j in folders2){
+							$("#pullAsgn").before("<div id='"+j+"D' class='assignment'><form action='' method='post' enctype='multipart/form-data' id='"+ j+"F' ><span class='assignmentTitle' id='"+j+"'T>"+ j +":</span><input type='file' name='fileToUpload' id='fileToUpload' value=''><label for='fileToUpload' class='fileButton'>Choose File</label><button class='assignmentButton' id='"+ j+ "'>Select</button><input type='submit' value='Upload Gradescript' name='submit' class='fileUp' id='"+j+"'></form></div>");
 						}
 					}
 				
