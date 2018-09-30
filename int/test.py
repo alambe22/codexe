@@ -4,8 +4,6 @@ from time import time
 from json import dumps
 import re
 
-dir = "tests/"
-
 class Executable(object):
     def __init__(self, command, desired):
         self.command = command
@@ -42,7 +40,7 @@ def read(url):
     with open(url, 'r') as file:
         return file.read()
 
-def getCommands():
+def getCommands(dir="tests/"):
     return exo("ls " + dir).split("\n")
 
 
@@ -95,4 +93,4 @@ for s in rc.keys():
             }
     students[s]["report"] = rc[s]["report"]
     students[s]["grade"] = correct / total
-out(dumps(students), "out.json")
+out(dumps(students), sys.argv[1])
